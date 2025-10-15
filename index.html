@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Flavor Forward | Magazine Cover</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Define custom Tailwind colors and font */
+        html { height: 100%; }
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f7fbee; /* Creamy background outside the cover */
+        }
+        .cover-container {
+            /* Simulates a full-bleed print cover */
+            max-width: 500px; /* Standard magazine width for web preview */
+            width: 95%;
+            aspect-ratio: 3 / 4; /* Common magazine ratio */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            background-color: #f0fdf4; /* Pale green base for better text visibility */
+        }
+        .text-green-brand { color: #059669; } /* Deep Green */
+        .bg-green-brand { background-color: #059669; }
+        .text-yellow-accent { color: #fcd34d; } /* Bright Yellow */
+        .main-headline-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Magazine Cover Container -->
+    <div class="cover-container rounded-lg">
+
+        <!-- Main Cover Image (Vibrant Food Shot) -->
+        <div class="absolute inset-0 z-0">
+            <!-- Image of a vibrant overhead shot of a perfectly portioned healthy meal on a white plate --> 
+            <img 
+                src="https://placehold.co/800x1067/dcfce7/059669?text=OVERHEAD+HEALTHY+MEAL+SHOT" 
+                alt="Vibrant overhead shot of a perfectly portioned, colorful, and fresh meal" 
+                class="w-full h-full object-cover"
+                onerror="this.onerror=null; this.src='https://placehold.co/800x1067/dcfce7/059669?text=FOOD+COVER+IMAGE'"
+            >
+        </div>
+
+        <!-- Text Overlay Content -->
+        <div class="relative z-10 h-full p-4 sm:p-6 flex flex-col justify-between">
+            
+            <!-- Top Section: Masthead and Issue Info -->
+            <div class="flex flex-col">
+                
+                <!-- Issue Metadata (Date, Price, Website) -->
+                <div class="flex justify-between items-center text-xs sm:text-sm font-semibold text-white mb-2">
+                    <span class="bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full">OCTOBER 2025</span>
+                    <span class="bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full">$5.99 | FlavorForwardMag.com</span>
+                </div>
+
+                <!-- Masthead (Title) -->
+                <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none text-white main-headline-shadow self-center" style="font-family: serif; letter-spacing: -2px;">
+                    <span class="text-green-brand block text-center -mb-2" style="font-size: 0.5em; font-weight: 900;">THE</span>
+                    Flavor Forward
+                </h1>
+                
+                <!-- Magazine Type Deck -->
+                <p class="text-center text-sm sm:text-base font-bold text-green-brand -mt-1">
+                    Modern Living & Quick, Healthy Recipes
+                </p>
+            </div>
+
+            <!-- Middle Section: Main Headline (positioned over the food visual) -->
+            <div class="mt-8 text-center">
+                <h2 class="text-5xl sm:text-6xl font-extrabold leading-tight text-white main-headline-shadow uppercase">
+                    30-Minute Meals
+                </h2>
+                <h3 class="text-2xl sm:text-3xl font-bold text-yellow-accent main-headline-shadow mt-1">
+                    The Art of Eating Healthy When You're Out of Time
+                </h3>
+            </div>
+            
+            <!-- Bottom Section: Supporting Cover Lines -->
+            <div class="space-y-3 mt-4 self-end w-full">
+                <!-- Teaser Block (Yellow Accent) -->
+                <div class="bg-yellow-accent text-yellow-900 px-4 py-2 rounded-xl text-lg font-extrabold text-center shadow-lg transform rotate-[-1deg]">
+                    <span class="uppercase">PLUS:</span> Easy Meal Prep Hacks That Will Change Your Week
+                </div>
+                
+                <!-- Secondary Cover Lines -->
+                <ul class="space-y-1">
+                    <li class="bg-green-brand/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg text-sm sm:text-base font-semibold shadow-md">
+                        <span class="text-yellow-accent font-extrabold mr-2">&bull;</span> Power Smoothies: 5 Essential Recipes for Winter Immunity
+                    </li>
+                    <li class="bg-green-brand/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg text-sm sm:text-base font-semibold shadow-md">
+                        <span class="text-yellow-accent font-extrabold mr-2">&bull;</span> The Truth About Sugar Substitutes: What Your Doctor Won't Tell You
+                    </li>
+                    <li class="bg-green-brand/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg text-sm sm:text-base font-semibold shadow-md">
+                        <span class="text-yellow-accent font-extrabold mr-2">&bull;</span> Kitchen Tech Review: Is the Air Fryer Finally Obsolete?
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
