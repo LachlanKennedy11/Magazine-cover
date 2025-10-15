@@ -8,6 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Inter font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Load Barcode Font for realistic visual -->
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap" rel="stylesheet">
     <style>
         /* Define custom Tailwind colors and font */
         html { height: 100%; }
@@ -35,6 +37,12 @@
         .main-headline-shadow {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
+        /* New style for the realistic barcode text */
+        .barcode-style { 
+            font-family: 'Libre Barcode 39 Text', cursive; 
+            font-size: 20px; /* Ensures the bars are large enough */
+            line-height: 1; /* Tightens the spacing */
+        }
     </style>
 </head>
 <body>
@@ -52,32 +60,54 @@
                 onerror="this.onerror=null; this.src='https://placehold.co/800x1067/dcfce7/059669?text=FOOD+COVER+IMAGE+FALLBACK'"
             >
         </div>
-
+        
         <!-- Text Overlay Content -->
         <div class="relative z-10 h-full p-4 sm:p-6 flex flex-col justify-between">
             
             <!-- Top Section: Masthead and Issue Info -->
             <div class="flex flex-col">
                 
-                <!-- Issue Metadata and Magazine Type Deck Container -->
-                <div class="flex flex-col w-full text-white mb-2">
-                    <!-- Issue Metadata (Date, Price, Website) -->
-                    <div class="flex justify-between items-center text-xs sm:text-sm font-semibold mb-1">
-                        <span class="bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full">OCTOBER 2025</span>
-                        <span class="bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full">$5.99 | FlavorForwardMag.com</span>
+                <!-- Issue Metadata and Barcode Container -->
+                <div class="flex justify-between items-start w-full text-white mb-2">
+                    
+                    <!-- Left: Date -->
+                    <span class="bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full text-xs sm:text-sm font-semibold">
+                        OCTOBER 2025
+                    </span>
+                    
+                    <!-- Right: Price, Website, and Barcode (Column layout) -->
+                    <div class="flex flex-col items-end space-y-1">
+                        
+                        <!-- Price and Website -->
+                        <span class="bg-black/50 backdrop-blur-sm px-2 py-1 rounded-full text-xs sm:text-sm font-semibold">
+                            $5.99 | FlavorForwardMag.com
+                        </span>
+                        
+                        <!-- Barcode Placeholder (Now using Barcode Font) -->
+                        <div class="flex flex-col items-center bg-white px-2 py-1 rounded shadow-md border border-gray-300">
+                            <!-- Actual looking Barcode using the font -->
+                            <span class="text-black barcode-style tracking-widest leading-none mt-0.5">
+                                *7447099786*
+                            </span>
+                            <!-- The human-readable numbers underneath -->
+                            <span class="text-black text-[9px] font-mono tracking-widest leading-none mt-0.5">
+                                74470 99786
+                            </span>
+                        </div>
                     </div>
 
-                    <!-- Magazine Type Deck MOVED AND ALIGNED RIGHT -->
-                    <p class="text-right text-xs sm:text-sm font-extrabold text-green-brand -mt-1">
-                        <!-- Added a semi-transparent white background for better contrast against the food image -->
-                        <span class="bg-white/90 px-3 py-1 rounded-l-lg shadow-md inline-block">
-                            Modern Living & Quick, Healthy Recipes
-                        </span>
-                    </p>
                 </div>
 
+                <!-- Magazine Type Deck ALIGNED RIGHT -->
+                <p class="text-right text-xs sm:text-sm font-extrabold text-green-brand -mt-1">
+                    <!-- Added a semi-transparent white background for better contrast against the food image -->
+                    <span class="bg-white/90 px-3 py-1 rounded-l-lg shadow-md inline-block">
+                        Modern Living & Quick, Healthy Recipes
+                    </span>
+                </p>
+
                 <!-- Masthead (Title) -->
-                <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none text-white main-headline-shadow self-center" style="font-family: serif; letter-spacing: -2px;">
+                <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none text-white main-headline-shadow self-center mt-4" style="font-family: serif; letter-spacing: -2px;">
                     <span class="text-green-brand block text-center -mb-2" style="font-size: 0.5em; font-weight: 900;">THE</span>
                     Flavor Forward
                 </h1>
